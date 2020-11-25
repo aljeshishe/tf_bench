@@ -1,5 +1,5 @@
-FROM nvcr.io/nvidia/tensorflow:20.10-tf2-py3
-# FROM tensorflow/tensorflow:latest
+# FROM nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+FROM tensorflow/tensorflow:latest-gpu
 # Build Arguments
 #ARG PREFECT_VERSION
 #ARG EXTRAS=kubernetes
@@ -24,4 +24,4 @@ ENV LANG C.UTF-8
 COPY . /app
 
 WORKDIR /app
-CMD env  CUDA_FORCE_PTX_JIT=1 python mnist.py
+CMD python mnist.py
